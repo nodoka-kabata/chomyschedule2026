@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import expressRateLimit from 'express-rate-limit';
 import sessionsRouter from './routes/sessions.js';
+import adminRouter from './routes/admin.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
@@ -24,6 +25,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/sessions', sessionsRouter);
+app.use('/api/admin', adminRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
