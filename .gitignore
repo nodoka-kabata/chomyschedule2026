@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+coverage/
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pm-debug.log*
+pm-error.log*
+pmrc
