@@ -3,6 +3,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 import app from './app.js';
 import logger from './logger.js';
+import { setIo } from './socket.js';
 
 dotenv.config();
 
@@ -15,6 +16,8 @@ const io = new Server(server, {
     methods: ['GET', 'POST']
   }
 });
+
+setIo(io);
 
 io.on('connection', (socket) => {
   logger.info(`socket connected: ${socket.id}`);

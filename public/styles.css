@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f9f9fb;
+  color: #1b1b1f;
+}
+
+header {
+  padding: 1rem;
+  background: linear-gradient(120deg, #3b82f6, #a855f7);
+  color: white;
+  text-align: center;
+}
+
+main {
+  max-width: 980px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.control {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+button {
+  border: none;
+  padding: 0.65rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.45rem;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.form {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.55rem;
+  font-size: 0.95rem;
+}
+
+.formActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.sessions {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sessions th,
+.sessions td {
+  padding: 0.65rem 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.sessions tbody tr:nth-child(odd) {
+  background: rgba(59, 130, 246, 0.06);
+}
+
+.sessions td .tag {
+  display: inline-block;
+  margin: 0 0.2rem 0.2rem 0;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #1e3a8a;
+  font-size: 0.8rem;
+}
+
+.sessions td .actions {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.sessions td .actions button {
+  padding: 0.35rem 0.55rem;
+  font-size: 0.8rem;
+  background: rgba(31, 41, 55, 0.08);
+  color: #1f2937;
+}
+
+.empty {
+  padding: 1rem;
+  text-align: center;
+  color: #6b7280;
+  border: 1px dashed rgba(107, 114, 128, 0.5);
+  border-radius: 0.75rem;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+@media (max-width: 760px) {
+  .sessions th,
+  .sessions td {
+    font-size: 0.82rem;
+    padding: 0.5rem;
+  }
+
+  .form {
+    padding: 1rem;
+  }
+}

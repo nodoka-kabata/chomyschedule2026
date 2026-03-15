@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>超会議2026 スケジュール</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>超会議2026 スケジュールジェネレーター</h1>
+  </header>
+
+  <main>
+    <section class="control">
+      <button id="refreshBtn" type="button">最新の予定を取得</button>
+      <button id="exportBtn" type="button">ICSエクスポート</button>
+      <button id="toggleRangeBtn" type="button">全予定を表示</button>
+    </section>
+
+    <section class="form">
+      <h2 id="formTitle">セッションを追加</h2>
+      <form id="sessionForm">
+        <input type="hidden" id="sessionId" />
+        <label>タイトル<br /><input type="text" id="title" required maxlength="255" /></label>
+        <label>開始日時<br /><input type="datetime-local" id="startAt" required /></label>
+        <label>終了日時<br /><input type="datetime-local" id="endAt" required /></label>
+        <label>会場<br /><input type="text" id="venue" maxlength="255" /></label>
+        <label>タグ (カンマ区切り)<br /><input type="text" id="tags" /></label>
+        <label>メモ<br /><textarea id="notes" rows="3" maxlength="1024"></textarea></label>
+        <div class="formActions">
+          <button type="submit" id="saveBtn">保存</button>
+          <button type="button" id="cancelBtn">クリア</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list">
+      <h2>セッション一覧</h2>
+      <div id="emptyMessage" class="empty">まだセッションがありません。</div>
+      <table id="sessionsTable" class="sessions" aria-label="セッション一覧">
+        <thead>
+          <tr>
+            <th>開始</th>
+            <th>終了</th>
+            <th>タイトル</th>
+            <th>会場</th>
+            <th>タグ</th>
+            <th>メモ</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <small>リアルタイム同期: Socket.IO</small>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

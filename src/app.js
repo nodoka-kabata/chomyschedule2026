@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import cors from 'cors';
 import helmet from 'helmet';
 import expressRateLimit from 'express-rate-limit';
@@ -7,6 +8,9 @@ import adminRouter from './routes/admin.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
+
+// Serve frontend static assets
+app.use(express.static(path.resolve(process.cwd(), 'public')));
 
 app.use(helmet());
 app.use(cors({ origin: true }));
