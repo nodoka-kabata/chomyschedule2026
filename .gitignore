@@ -9,3 +9,44 @@ yarn-error.log*
 pm-debug.log*
 pm-error.log*
 pmrc
+
+# Build output
+dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+.pnp/
+.pnp.js
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Jest cache
+jest-cache/
+
+# Optional npm cache directory
+.npm
+
+# MacOS
+*.DS_Store
+
+# Lock files (if using alternative package managers)
+package-lock.json
+
+# Yarn
+.yarn/*
+.yarnrc.yml
+
+# Misc
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
